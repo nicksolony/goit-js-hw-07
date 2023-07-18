@@ -35,28 +35,34 @@ galleryContainer.addEventListener('click',e => {
     `, 
         {onClose: () =>{
             document.removeEventListener('keydown', e =>{
-                console.log(e.target)
                 if(e.key==='Escape') {
                     lightbox.close();
                 }
             })
-
-            console.log('closing')
-        
         },
-        onShow: () =>{
-            document.addEventListener('keydown', e =>{
-                console.log(e.target)
+        onShow: (lightbox) =>{
+            document.addEventListener('keydown',
+             e =>{
                 if(e.key==='Escape') {
                     lightbox.close();
                 }
-            })
-        }    });
+            }
+            );
+        }
+    })
     lightbox.show();
 })
 
+// function onEscClose (event) {
+//     console.log(event.key)
+//     if(event.key==='Escape')
+//     instance.close();
+    
+// }
 
-
+// function modalClose(instance) {
+//     instance.close();
+// }
 
 
 
