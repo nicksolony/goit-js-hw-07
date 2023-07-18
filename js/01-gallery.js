@@ -21,5 +21,14 @@ galleryContainer.innerHTML = galleryElements;
 
 galleryContainer.addEventListener('click',e => {
     e.preventDefault();
-    console.log(e.target);
+    if(!e.target.classList.contains('gallery__image'))
+    return;
+    
+    console.log(e.target.dataset.source);
+    let lighbox=basicLightbox.create(`
+    <p>
+    ${e.target.dataset.source}
+    </p>
+    `)
+    lighbox.show();
 })
