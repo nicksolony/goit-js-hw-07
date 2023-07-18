@@ -6,11 +6,18 @@ let galleryContainer = document.querySelector('ul.gallery');
 console.log(galleryContainer);
 
 let galleryElements = galleryItems.map(({preview, original, description}) => {
-     return `<li class="gallery__item" data-source = ${original}>
-                <img
-                    src="${preview}" alt="${description}" class="gallery__image"
-                >
+     return `<li class="gallery__item" >
+                <a class="gallery__link" href=${original}>
+                    <img
+                        class="gallery__image"
+                        src=${preview}
+                        data-source = ${original} 
+                        alt=${description}
+                    >
+                </a>
             </li>`
 }).join(' ');
 
 galleryContainer.innerHTML = galleryElements;
+
+
