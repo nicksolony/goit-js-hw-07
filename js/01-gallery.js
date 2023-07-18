@@ -53,16 +53,6 @@ galleryContainer.addEventListener('click',e => {
     lightbox.show();
 })
 
-// function onEscClose (event) {
-//     console.log(event.key)
-//     if(event.key==='Escape')
-//     instance.close();
-    
-// }
-
-// function modalClose(instance) {
-//     instance.close();
-// }
 
 
 
