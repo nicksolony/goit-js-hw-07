@@ -26,9 +26,12 @@ galleryContainer.addEventListener('click',e => {
     
     console.log(e.target.dataset.source);
     let lighbox=basicLightbox.create(`
-    <p>
-    ${e.target.dataset.source}
-    </p>
+        <img
+            src="${e.target.dataset.source}"
+            alt="${e.target.description}"
+            width="800" 
+            height="600"
+        >
     `)
     lighbox.show();
 })
