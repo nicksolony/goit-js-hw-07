@@ -24,14 +24,39 @@ galleryContainer.addEventListener('click',e => {
     if(!e.target.classList.contains('gallery__image'))
     return;
     
-    console.log(e.target.dataset.source);
-    let lighbox=basicLightbox.create(`
+    
+    let lightbox=basicLightbox.create(`
         <img
             src="${e.target.dataset.source}"
             alt="${e.target.description}"
             width="800" 
             height="600"
         >
-    `)
-    lighbox.show();
+    `, 
+        {onClose: () =>{
+            document.removeEventListener('keydown', e =>{
+                console.log(e.target)
+                if(e.key==='Escape') {
+                    lightbox.close();
+                }
+            })
+
+            console.log('closing')
+        
+        },
+        onShow: () =>{
+            document.addEventListener('keydown', e =>{
+                console.log(e.target)
+                if(e.key==='Escape') {
+                    lightbox.close();
+                }
+            })
+        }    });
+    lightbox.show();
 })
+
+
+
+
+
+
