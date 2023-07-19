@@ -1,4 +1,5 @@
 import { galleryItems } from './gallery-items.js';
+
 // Change code below this line
 
 let galleryContainer = document.querySelector('ul.gallery');
