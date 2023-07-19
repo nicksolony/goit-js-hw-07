@@ -18,15 +18,9 @@ let galleryElements = galleryItems.map(({preview, original, description}) => {
 
 galleryContainer.innerHTML = galleryElements;
 
-galleryContainer.addEventListener('click',e => {
-    e.preventDefault();
-    if(!e.target.classList.contains('gallery__image'))
-    return;
-
-    let lightbox = new SimpleLightbox (
-        `.gallery a`,
-        { 
-            captionsData: 'alt',
-            captionDelay: 250
-    });
-})
+let lightbox = new SimpleLightbox (
+    `.gallery a`,
+    { 
+        captionsData: 'alt',
+        captionDelay: 250
+});
