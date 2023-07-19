@@ -35,23 +35,20 @@ galleryContainer.addEventListener('click',e => {
         >
     `, 
         {onClose: () =>{
-            document.removeEventListener('keydown', e =>{
-                if(e.key==='Escape') {
-                    lightbox.close();
-                }
-            })
+            document.removeEventListener('keydown',onEscPress)
         },
         onShow: (lightbox) =>{
-            document.addEventListener('keydown',
-             e =>{
-                if(e.key==='Escape') {
-                    lightbox.close();
-                }
-            }
-            );
+            document.addEventListener('keydown', onEscPress);
         }
     })
     lightbox.show();
+
+    function onEscPress(e) {
+        if(e.key==='Escape') {
+            lightbox.close();
+            console.log ('closed')
+        }
+    }
 })
 
 
