@@ -46,7 +46,6 @@ galleryContainer.addEventListener('click',e => {
     function onEscPress(e) {
         if(e.key==='Escape') {
             lightbox.close();
-            console.log ('closed')
         }
     }
 })
